@@ -9,6 +9,7 @@ const CommentSection = props => {
   const [commentsData, setComments] = useState(props.comments)
   console.log('From Comment Container: ',props)
   console.log('This is from commentsData',commentsData)
+  
 
   return (
     <div>
@@ -16,7 +17,8 @@ const CommentSection = props => {
 
       {
         commentsData.map(comment => {
-        return <Comment comment={comment}/>
+          console.log('Comment Map:',comment)
+        return <Comment key={comment.username}  comment={comment}/>
         })
       }
 
